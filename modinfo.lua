@@ -14,14 +14,28 @@ meta =
     title = "TradeExport",
 
     -- Description of your mod that will be displayed to players
-    description = "Exports the trading goods data as .csv files usable for data mining purposes ;). \n\nIt only exports the data you can see with the basic trading system. That means only the current sector. Export is only triggered when the trading data is viewed via the trading system. It is meant as an alternative to use screenshots or paper to save the seen good prices. Data is only updated if you visit a sector again and use the trading system. \n\nIt exports one .csv file per sector. The files are saved in .avorion/moddata/TradeExport/ and are named sector{x-coord}-{y-coord}.csv. Rows have the following format: action ('buy' or 'sell' to station), good, price, stock, max_stock, coord_x, coord_y, station, size (of good). Sectors without any trading goods generate empty files.\n\nThe datamining folder contains an python example for working with the exported data.\n",
+    description = [[
+Exports the trading goods data as .csv files, usable for data mining purposes ;).
+
+It only exports the data you can see with the basic trading system.  That means only the current sector. Export is only triggered when the trading data is viewed via the trading system. It is meant as an alternative to use screenshots or paper to save the seen good prices. Data is only updated if you visit a sector again and use the trading system.
+
+It exports one .csv file per sector. The files are saved in `.avorion/moddata/` and are named `TradeExport-{galaxy_seed}-sector{x_coord}-{y_coord}.csv`. Rows have the following format:
+
+```
+action ('buy' or 'sell' to station); good; price; stock; max_stock; coord_x; coord_y; station; size (of good)
+```
+
+Sectors without any trading goods generate empty files.
+
+The datamining folder contains an python example for working with the exported data.
+    ]],
 
     -- Insert all authors into this list
     authors = {"masterix"},
 
     -- Version of your mod, should be in format 1.0.0 (major.minor.patch) or 1.0 (major.minor)
     -- This will be used to check for unmet dependencies or incompatibilities
-    version = "1.0.3",
+    version = "1.1",
 
     -- If your mod requires dependencies, enter them here. The game will check that all dependencies given here are met.
     -- Possible attributes:

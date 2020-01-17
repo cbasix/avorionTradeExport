@@ -9,17 +9,20 @@ function setData(sellable_received, buyable_received, routes_received)
 	--]]
 
 	local x, y = Sector():getCoordinates()
-	local file, err = io.open("./moddata/TradeExport/sector" .. x .. "-" .. y .. ".csv", "w")
+	local file, err = io.open("moddata/TradeExport-" .. tostring(GameSeed()) .. "-sector" .. x .. "-" .. y .. ".csv", "w")
 	if file==nil then
-	    print("Couldn't open file: "..err)
+	    file, err = io.open("moddata\\TradeExport-" .. tostring(GameSeed()) .. "-sector" .. x .. "-" .. y .. ".csv", "w")
+    end
+    if file==nil then
+	        print("Couldn't open file: "..err)
 	else
 
 	    for _, buyoffer in pairs(buyable) do
-		writeOffer(buyoffer, file, "buy")
+		    writeOffer(buyoffer, file, "buy")
 	    end
 
 	    for _, selloffer in pairs(sellable) do
-		writeOffer(selloffer, file, "sell")
+		    writeOffer(selloffer, file, "sell")
 	    end
 
 	    file:close()
