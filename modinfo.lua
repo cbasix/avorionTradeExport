@@ -28,6 +28,8 @@ action ('buy' or 'sell' to station); good; price; stock; max_stock; coord_x; coo
 Sectors without any trading goods generate empty files.
 
 The datamining folder contains an python example for working with the exported data.
+
+Note: Mod is currently only tested running under linux. If you experience any problems don't hesitate to open an issue at https://github.com/cbasix/avorionTradeExport
     ]],
 
     -- Insert all authors into this list
@@ -67,5 +69,5 @@ The datamining folder contains an python example for working with the exported d
     saveGameAltering = false,
 
     -- Contact info for other users to reach you in case they have questions
-    contact = "trashit(at)blackgear.de",
+    contact = "https://github.com/cbasix/avorionTradeExport",
 }
