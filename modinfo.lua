@@ -17,7 +17,7 @@ meta =
     description = [[
 Exports the trading goods data as .csv files, usable for data mining purposes ;).
 
-It only exports the data you can see with the basic trading system.  That means only the current sector. Export is only triggered when the trading data is viewed via the trading system. It is meant as an alternative to use screenshots or paper to save the seen good prices. Data is only updated if you visit a sector again and use the trading system.
+It only exports the data you can see with the basic trading system. Export is triggered when one of your ships equiped with a trading system enters a sector. Data is only updated if a ship of yours visits a sector again.
 
 It exports one .csv file per sector. The files are saved in `.avorion/moddata/` and are named `TradeExport-{galaxy_seed}-sector{x_coord}-{y_coord}.csv`. Rows have the following format:
 
@@ -37,7 +37,7 @@ Note: Mod is currently only tested running under linux. If you experience any pr
 
     -- Version of your mod, should be in format 1.0.0 (major.minor.patch) or 1.0 (major.minor)
     -- This will be used to check for unmet dependencies or incompatibilities
-    version = "1.1",
+    version = "1.2",
 
     -- If your mod requires dependencies, enter them here. The game will check that all dependencies given here are met.
     -- Possible attributes:
@@ -55,7 +55,7 @@ Note: Mod is currently only tested running under linux. If you experience any pr
     --      {id = "OptionalMod", min = "0.2", optional = true}, -- we support OptionalMod optionally, starting at version 0.2
     -- },
     dependencies = {
-        {id = "Avorion", min = "0.29", max = "0.30.1"}
+        {id = "Avorion", min = "0.29", max = "0.40"}
     },
 
     -- Set to true if the mod only has to run on the server. Clients will get notified that the mod is running on the server, but they won't download it to themselves

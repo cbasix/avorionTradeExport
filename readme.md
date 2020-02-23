@@ -5,10 +5,8 @@
 Exports the trading goods data as .csv files, usable for data mining purposes ;). 
 
 It only exports the data you can see with the basic trading system. 
-That means only the current sector. Export is only triggered when the trading data is 
-viewed via the trading system. It is meant as an alternative to use screenshots or 
-paper to save the seen good prices. Data is only updated if you visit a sector 
-again and use the trading system. 
+Export is triggered when one of your ships equiped with a trading system enters a sector. 
+Data is only updated if a ship of yours visits a sector again.
 
 It exports one .csv file per sector. The files are saved in `.avorion/moddata/` and 
 are named `TradeExport-{galaxy_seed}-sector{x_coord}-{y_coord}.csv`. Rows have the following format: 

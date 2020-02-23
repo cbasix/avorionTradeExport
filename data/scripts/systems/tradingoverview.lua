@@ -1,11 +1,22 @@
-local oldSetData = setData
+--local originalSetData = setData
+local originalOnSectorChanged = onSectorChanged
 
-function setData(sellable_received, buyable_received, routes_received)
-	oldSetData(sellable_received, buyable_received, routes_received) -- call real function
+function onSectorChanged()
+    originalOnSectorChanged()
+    exportSectorData()
+end
+
+--[[function setData(sellable_received, buyable_received, routes_received)
+	originalSetData(sellable_received, buyable_received, routes_received) -- call real function
     
-	--[[
-	print(">Got " .. #sellable_received .. " sellable goods from sector " .. tostring(vec2(Sector():getCoordinates())))
-	print(">Got " .. #buyable_received .. " buyable goods from sector " .. tostring(vec2(Sector():getCoordinates())))
+    exportSectorData(sellable_received, buyable_received)
+end]]--
+
+function exportSectorData()
+    local sellable, buyable = gatherData()
+    --[[
+	print(">Got " .. #sellable .. " sellable goods from sector " .. tostring(vec2(Sector():getCoordinates())))
+	print(">Got " .. #buyable .. " buyable goods from sector " .. tostring(vec2(Sector():getCoordinates())))
 	--]]
 
 	local x, y = Sector():getCoordinates()
@@ -27,7 +38,6 @@ function setData(sellable_received, buyable_received, routes_received)
 
 	    file:close()
 	end
-
 end
 
 function writeOffer(offer, file, option)
